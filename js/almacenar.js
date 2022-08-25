@@ -6,6 +6,7 @@ const contenedor = document.getElementById("contenedor");
 let items = [];
 
 
+
 document.addEventListener("DOMContentLoaded", () => { //este evento se lanza al cargar la pagina, se usa para dejar cargado el contenedor con los item actuales del storage (si hay)
     if(localStorage.getItem('texto')){      //chequeamos si hay algun valor en el localStorage
         items = JSON.parse(localStorage.getItem('texto'));      //si hay algo, obtenemos el arreglo en formato string y lo parseamos (convertimos a formato array con JSON.parse())
@@ -27,7 +28,8 @@ agregar.addEventListener("click", () => {  //este evento se dispara al darle cli
 });
 
 limpiar.addEventListener("click", () => { //este evento se dispara al limpiar
-    localStorage.removeItem("texto");  //borramos el item por la clave 'texto'
+    items = []; // limpiamos el array (el bug que teniamos)
+    localStorage.clear();  //borramos el item por la clave 'texto'
     contenedor.innerHTML = "";  //vaciamos el contenedor <li>
 });
 
