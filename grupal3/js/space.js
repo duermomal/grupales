@@ -35,11 +35,11 @@ let getJSONData = function (url) {
 //para armar las cartita
 const getCardHTML = (img, titulo, descripcion, fecha) => {
     return `<div class="col">
-                <div class="card h-80">
+                <div class="card h-100" >
                     <img src="${img}" class="card-img-top" alt="${titulo}">
                     <div class="card-body">
                         <h5 class="card-title">${titulo}</h5>
-                        <p class="card-text">${descripcion}</p>
+                        <p class="card-text" >${descripcion}</p>
                     </div>
                 </div>
             </div>`
