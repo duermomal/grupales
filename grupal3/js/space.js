@@ -60,14 +60,15 @@ const getCardHTML = (img, titulo, descripcion, fecha) => {
 
 buscar.addEventListener('click', () => {
     contenedor.innerHTML = '';
-    getJSONData(URL + campo_texto.value).then(function (resultado) {
-        if (resultado.status == 'ok') {
-            for (let item of resultado.data.collection.items) {
-                //console.log(item.links[0].href);
-                contenedor.innerHTML += getCardHTML(item.links[0].href, item.data[0].title, item.data[0].description, item.data[0].date_created);
+    getJSONData(URL + campo_texto.value)
+        .then(function (resultado) {
+            if (resultado.status == 'ok') {
+                for (let item of resultado.data.collection.items) {
+                    //console.log(item.links[0].href);
+                    contenedor.innerHTML += getCardHTML(item.links[0].href, item.data[0].title, item.data[0].description, item.data[0].date_created);
 
+                }
             }
-        }
     });
 
 });
