@@ -65,8 +65,8 @@ buscar.addEventListener('click', () => {
             let array_nasa = resultado.data.collection.items;
             if (resultado.status == 'ok') {
                 for (let item of array_nasa) {
-                    //console.log(item.links[0].href);
-                    contenedor.innerHTML += getCardHTML(item.links[0].href, item.data[0].title, item.data[0].description, item.data[0].date_created);
+                    const {links:[{href}], data:[{title,description,date_created}]} = item; //para desestructurar el objeto items
+                    contenedor.innerHTML += getCardHTML(href, title, description, date_created); //llamo directamente con los nombres que defini arriba
 
                 }
             }
