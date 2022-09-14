@@ -62,8 +62,9 @@ buscar.addEventListener('click', () => {
     contenedor.innerHTML = '';
     getJSONData(URL + campo_texto.value)
         .then(function (resultado) {
+            let array_nasa = resultado.data.collection.items;
             if (resultado.status == 'ok') {
-                for (let item of resultado.data.collection.items) {
+                for (let item of array_nasa) {
                     //console.log(item.links[0].href);
                     contenedor.innerHTML += getCardHTML(item.links[0].href, item.data[0].title, item.data[0].description, item.data[0].date_created);
 

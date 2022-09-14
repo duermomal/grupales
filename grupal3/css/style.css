@@ -4,7 +4,7 @@ main {
 
 .card-text {
  /*  overflow-x: hidden;  Hide horizontal scrollbar */
-  overflow-y: scroll; 
+  overflow-y: auto; 
 
  
 
