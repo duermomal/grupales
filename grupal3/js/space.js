@@ -71,5 +71,4 @@ buscar.addEventListener('click', () => {
                 }
             }
     });
-
 });
