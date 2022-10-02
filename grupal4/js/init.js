@@ -64,9 +64,10 @@ function mostrarPelis(filteredArray){
 
     let htmlPaAgregar = '';
     for(let peli of filteredArray){
-        htmlPaAgregar += `<li onclick = "spanPeli(${peli.id})" class="list-group-item comments-list" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                             <p id = "com_head" class = "comments-list-head"><b>${peli.title}</b> -  ${ponerEstrellas(Math.floor(peli.vote_average/2))}</p>
-                             <p class = "comments-list-data">${peli.tagline}</p>    
+        console.log(peli)
+        htmlPaAgregar += `<li onclick = "spanPeli(${peli.id})" class="list-group-item comments-list" style="background-color: #212529;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                             <p id = "com_head" class = "comments-list-head" style="color: white;"><b>${peli.title}</b> - ${ponerEstrellas(Math.floor(peli.vote_average/2))}</p>
+                             <p class = "comments-list-data" style="color: gray;">${peli.tagline}</p>    
                           </li>`;
     }
 
@@ -83,7 +84,7 @@ function spanPeli(peliID) {
    //console.log(peliEncontrada);
 
 
-   span_title.innerHTML = peliEncontrada.title + " : " + peliEncontrada.tagline;
+   span_title.innerHTML = peliEncontrada.title;
    span_overview.innerHTML = peliEncontrada.overview;
    let generosTxt = "";
    for(let i = 0; i <= peliEncontrada.genres.length-2; i++){
