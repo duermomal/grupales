@@ -80,7 +80,7 @@ function spanPeli(peliID) {
 
    let peliEncontrada = JSON.parse(localStorage.getItem("pelis")).find(pelicula => pelicula.id == peliID);
 
-   console.log(peliEncontrada);
+   //console.log(peliEncontrada);
 
 
    span_title.innerHTML = peliEncontrada.title + " : " + peliEncontrada.tagline;
